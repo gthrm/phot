@@ -1,0 +1,10 @@
+.img {
+    width: 300px;
+    margin-bottom: 1px;
+}
+
+.img:hover {
+    cursor: pointer;
+    filter: brightness(115%);
+      
+}

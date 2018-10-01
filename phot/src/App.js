@@ -8,7 +8,14 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {data: []};
+    this.state = {
+      data: [],
+      window: false
+    };
+  }
+
+  updateStateWindow = (value) => {
+    this.setState({ window: value })
   }
 
   componentWillMount() {
@@ -18,8 +25,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="LeftColumn"></div>
-        <ImgGrid imges={this.state.data}/>
+        {this.state.window === true?null:<div className="LeftColumn center"><h1 className="center">Redevice</h1></div>}
+        <div className="grid">
+          <ImgGrid updateStateWindow={this.updateStateWindow} window={this.state.window} imges={this.state.data}/>
+        </div>
       </div>
     );
   }

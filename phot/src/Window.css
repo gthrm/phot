@@ -1,0 +1,30 @@
+.window {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-big {
+    height: 90vh;
+}
+
+.close {
+    position: absolute;
+    top: 5px;
+    font-variant: all-petite-caps;
+}
+
+.close:hover, .img-big {
+    cursor: pointer;
+    font-style: unset;
+    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+    .img-big {
+        width: 100%;
+        height: auto;
+    }
+}
