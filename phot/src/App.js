@@ -6,15 +6,20 @@ import { apiPrefix } from './etc/config.json';
 
 class App extends Component {
 
-  loadImg() {
-    return axios.get(`${apiPrefix}/imges`);
+  constructor(props) {
+    super(props);
+    this.state = {data: []};
+  }
+
+  componentWillMount() {
+    axios.get(`${apiPrefix}/imges`).then(({data}) => {this.setState({data: data})});
   };
 
   render() {
     return (
       <div className="App">
         <div className="LeftColumn"></div>
-        <ImgGrid imges={this.loadImg}/>
+        <ImgGrid imges={this.state.data}/>
       </div>
     );
   }

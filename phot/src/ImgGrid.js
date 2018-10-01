@@ -16,21 +16,20 @@ class ImgGrid extends Component {
             isFitWidth: true
         };
         return (
-            <div>{this.props.imges}</div>
-            // <Masonry
-            //     className='ImgGrid'
-            //     options={masonryOptions}
-            // >
-            //     {
-            //         this.props.imges.map(img =>
-            //             <Img
-            //                 url={img.url}
-            //                 title={img.title}
-            //             >
-            //             </Img>
-            //         )
-            //     }
-            // </Masonry>
+            <Masonry
+                className='ImgGrid'
+                options={masonryOptions}
+            >
+                {
+                    this.props.imges.map(img =>
+                        <Img
+                            url={img.url}
+                            title={img.title}
+                        >
+                        </Img>
+                    )
+                }
+            </Masonry>
         );
     }
 }
