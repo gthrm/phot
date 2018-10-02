@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import ImgGrid from './ImgGrid.js';
 import axios from 'axios';
+
+import ImgGrid from './ImgGrid.js';
+
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { apiPrefix } from './etc/config.json';
+
 
 class App extends Component {
 

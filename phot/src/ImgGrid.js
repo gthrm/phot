@@ -26,7 +26,9 @@ class ImgGrid extends Component {
             columnWidth: 100,
             gutter: 1,
             isFitWidth: true,
-            percentPosition: true
+            percentPosition: true,
+            transitionDuration: 0,
+            stagger: 0
         };
         return (
                 this.props.window?
