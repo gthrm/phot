@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import ImgGrid from './ImgGrid.js';
+// import Soc from './Soc.js';
+
+// import svg from './svg.js';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -27,9 +30,17 @@ class App extends Component {
   };
 
   render() {
+
     return (
       <div className="App">
-        {this.state.window === true?null:<div className="LeftColumn center"><h1 className="center">Redevice</h1></div>}
+        {this.state.window === true?
+          null
+          :
+          <div className="LeftColumn center">
+            <h1 className="center">Redevice</h1>
+            {/* <Soc href="https://vk.com/romanra" title="vk.com" svg={svg.vk} />
+            <Soc href="https://www.instagram.com/redevice/" title="instagram" svg={svg.inst} /> */}
+          </div>}
         <div className="grid">
           <ImgGrid updateStateWindow={this.updateStateWindow} window={this.state.window} imges={this.state.data}/>
         </div>

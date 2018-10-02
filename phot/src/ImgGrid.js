@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Masonry from 'react-masonry-component';
-import Window from './Window';
-import './ImgGrid.css';
 
+import Window from './Window.js';
 import Img from './Img.js';
+import LoadingScreen from './LoadingScreen.js'
+
+import './ImgGrid.css';
 
 class ImgGrid extends Component {
 
@@ -30,7 +32,10 @@ class ImgGrid extends Component {
             transitionDuration: 0,
             stagger: 0
         };
+
         return (
+            
+            this.props.imges.length === 0 ? <LoadingScreen /> :
                 this.props.window?
                 <Window
                     window={this.props.window}
