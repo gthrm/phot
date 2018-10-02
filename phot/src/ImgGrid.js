@@ -12,20 +12,17 @@ class ImgGrid extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          url: '',
-          title: ''
+            number: '',
+            url: '',
+            title: ''
         };
     }
 
     updateInfoImg = (data) => {
-        this.setState({url: data.url, title: data.title});
+        this.setState({number: data.number, url: data.url, title: data.title});
     }
 
     render() {
-        
-        console.log('====================================');
-        console.log(this.props.imges);
-        console.log('====================================');
 
         const masonryOptions = {
             itemSelector: '.img',
@@ -42,8 +39,10 @@ class ImgGrid extends Component {
             this.props.imges.length === 0 ? <LoadingScreen /> :
                 this.props.window?
                 <Window
+                    imges={this.props.imges}
                     window={this.props.window}
                     updateStateWindow={this.props.updateStateWindow}
+                    number={this.state.number}
                     url={this.state.url}
                     title={this.state.title}
                 />
@@ -59,6 +58,7 @@ class ImgGrid extends Component {
                                 updateStateWindow={this.props.updateStateWindow}
                                 window={this.props.window}
                                 key={img._id}
+                                number={img.number}
                                 url={img.url}
                                 title={img.title}
                             >

@@ -3,16 +3,8 @@ import './Img.css';
 
 class Img extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-          url: this.props.url,
-          title: this.props.title
-        };
-    }
-
     handeClick() {
-        let data = {url: this.state.url, title:this.state.title}
+        let data = {url: this.props.url, title:this.props.title, number: this.props.number}
         this.props.updateInfoImg(data);
         this.props.updateStateWindow(!this.props.window);
     }
