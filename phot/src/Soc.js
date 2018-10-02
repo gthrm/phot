@@ -5,9 +5,11 @@ class Soc extends Component {
 
     render() {
         return (
-            <a href={this.props.href} title={this.props.title}>
-                <svg>{this.props.svg}</svg>
-            </a>
+            <li className="li-soc">
+                <a href={this.props.href} title={this.props.title} target="_blank">
+                    <i className={this.props.svg}></i>
+                </a>
+            </li>
         )
     }
 }

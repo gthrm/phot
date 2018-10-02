@@ -1,0 +1,18 @@
+.li-soc {
+    list-style-type: none;
+    margin: 10px;
+}
+
+.fab {
+    size: 30px;
+    color: #000000;
+}
+
+.fab:hover {
+    cursor: pointer;
+    filter: opacity(.5);
+}
+
+.fab::before {
+    width: 150px;
+}
