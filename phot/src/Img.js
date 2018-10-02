@@ -18,6 +18,7 @@ class Img extends Component {
     }
 
     render() {
+
         return (
             <img onClick={()=>this.handeClick()} className="img" src={this.props.url} alt={this.props.title}></img>
         )

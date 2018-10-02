@@ -23,6 +23,10 @@ class ImgGrid extends Component {
 
     render() {
         
+        console.log('====================================');
+        console.log(this.props.imges);
+        console.log('====================================');
+
         const masonryOptions = {
             itemSelector: '.img',
             columnWidth: 100,

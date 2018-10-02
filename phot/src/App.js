@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    axios.get(`${apiPrefix}/imges`).then(({data}) => {this.setState({data: data})});
+    axios.get(`${apiPrefix}/imges`).then(({data}) => {this.setState({data: data.reverse()})});
   };
 
   render() {
