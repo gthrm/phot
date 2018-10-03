@@ -35,10 +35,30 @@ class Window extends Component {
         })
     }
 
+    handeClickBack() {
+        const lengthArr = this.props.imges.length;
+        const number = this.state.number;
+        const backNumber = lengthArr-number-1-1;
+        
+        backNumber === -1 ?
+        this.setState({
+            number: this.props.imges[lengthArr-1].number,
+            url: this.props.imges[lengthArr-1].url,
+            title: this.props.imges[lengthArr-1].title
+        })
+        :
+        this.setState({
+            number: this.props.imges[backNumber].number,
+            url: this.props.imges[backNumber].url,
+            title: this.props.imges[backNumber].title
+        })
+    }
+
     render() {
         return (
             <div className="window">
-                <span className="close" onClick={()=>this.handeClick()}>Close</span>
+                <span className="back user-select-none" onClick={()=>this.handeClickBack()}>Back</span>
+                <span className="close user-select-none" onClick={()=>this.handeClick()}>Close</span>
                 <img onClick={()=>this.handeClickNext()} className="img-big" src={this.state.url} alt={this.state.title}></img>
             </div>
         )

@@ -28,7 +28,8 @@ class App extends Component {
 
   counterImg = () => {
     this.setState({count: this.state.count+1});
-    this.state.count === this.state.data.length ? this.setState({imgOnload: true}):console.log('counterImg ', 'count: ', this.state.count);
+    this.state.count === this.state.data.length ? this.setState({imgOnload: true}): console.log('*');
+    ;
   }
 
   componentWillMount() {
@@ -43,7 +44,7 @@ class App extends Component {
           null
           :
           <div className="LeftColumn center">
-            <h1 className="center">Redevice</h1>
+            <h1 className="center user-select-none">Redevice</h1>
             <ul className="ul-soc">
               <Soc href="https://vk.com/romanra" title="vk.com" svg={svg.vk} />
               <Soc href="https://www.instagram.com/redevice/" title="instagram" svg={svg.inst} />
