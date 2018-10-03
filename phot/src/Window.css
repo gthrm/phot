@@ -46,7 +46,17 @@
 @media (max-width: 480px) {
 
     .back {
-        width: 150px;
+        width: 50%;
+    }
+
+    .back:hover {
+        cursor: pointer;
+        align-items: center;
+        font-size: 0px;
+        background-color: transparent;
+        color: transparent;
+
+
     }
 
     .img-big {
