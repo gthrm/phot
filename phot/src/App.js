@@ -16,12 +16,19 @@ class App extends Component {
     super(props);
     this.state = {
       data: [],
-      window: false
+      window: false,
+      imgOnload: false,
+      count: 1
     };
   }
 
   updateStateWindow = (value) => {
     this.setState({ window: value })
+  }
+
+  counterImg = () => {
+    this.setState({count: this.state.count+1});
+    this.state.count === this.state.data.length ? this.setState({imgOnload: true}):console.log('counterImg ', 'count: ', this.state.count);
   }
 
   componentWillMount() {
@@ -42,8 +49,8 @@ class App extends Component {
               <Soc href="https://www.instagram.com/redevice/" title="instagram" svg={svg.inst} />
             </ul>
           </div>}
-        <div className="grid">
-          <ImgGrid updateStateWindow={this.updateStateWindow} window={this.state.window} imges={this.state.data}/>
+        <div className="grid" onLoad={()=>this.counterImg()}>
+          <ImgGrid imgOnload={this.state.imgOnload} updateStateWindow={this.updateStateWindow} window={this.state.window} imges={this.state.data}/>
         </div>
       </div>
     );
