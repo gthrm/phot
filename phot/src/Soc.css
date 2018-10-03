@@ -3,12 +3,12 @@
     margin: 10px;
 }
 
-.fab {
+.fab, .fas {
     size: 30px;
     color: #000000;
 }
 
-.fab:hover {
+.fab:hover, .fas:hover {
     cursor: pointer;
     filter: opacity(.5);
 }

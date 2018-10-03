@@ -48,6 +48,8 @@ class App extends Component {
             <ul className="ul-soc">
               <Soc href="https://vk.com/romanra" title="vk.com" svg={svg.vk} />
               <Soc href="https://www.instagram.com/redevice/" title="instagram" svg={svg.inst} />
+              <Soc href="tel:+79233568549" title="phone" svg={svg.phone} />
+
             </ul>
           </div>}
         <div className="grid" onLoad={()=>this.counterImg()}>

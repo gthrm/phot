@@ -57,8 +57,9 @@ class Window extends Component {
     render() {
         return (
             <div className="window">
-                <span className="back user-select-none" onClick={()=>this.handeClickBack()}>Back</span>
+                <span className="left control user-select-none" onClick={()=>this.handeClickBack()}>Back</span>
                 <span className="close user-select-none" onClick={()=>this.handeClick()}>Close</span>
+                <span className="right control user-select-none" onClick={()=>this.handeClickNext()}>Next</span>
                 <img onClick={()=>this.handeClickNext()} className="img-big" src={this.state.url} alt={this.state.title}></img>
             </div>
         )
