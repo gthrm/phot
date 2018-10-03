@@ -44,7 +44,7 @@ class App extends Component {
           null
           :
           <div className="LeftColumn center">
-            <h1 className="center user-select-none">Redevice</h1>
+            <h1 className="h1 center user-select-none">Redevice</h1>
             <ul className="ul-soc">
               <Soc href="https://vk.com/romanra" title="vk.com" svg={svg.vk} />
               <Soc href="https://www.instagram.com/redevice/" title="instagram" svg={svg.inst} />

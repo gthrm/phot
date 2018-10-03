@@ -44,6 +44,11 @@
   }
   .grid {
     justify-content: flex-start;
+    margin-top: 15px;
+  }
+
+  .h1 {
+    font-size: 30px!important;
   }
 }
 
