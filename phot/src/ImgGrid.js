@@ -14,15 +14,31 @@ class ImgGrid extends Component {
         this.state = {
             number: '',
             url: '',
-            title: ''
+            title: '',
+            upVisible: false
         };
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', () => this.upVisibleUpdate());
+        window.addEventListener('touchmove', () => this.upVisibleUpdate());
+    }
+
+    upVisibleUpdate() {
+        document.documentElement.scrollTop === 0 ? this.setState({upVisible: false}) : this.setState({upVisible: true});
     }
 
     updateInfoImg = (data) => {
         this.setState({number: data.number, url: data.url, title: data.title});
     }
 
-    
+    handeClickUp() {
+        for (let i = document.documentElement.scrollTop; i !== 0; --i) {
+            setTimeout(() => {
+                document.documentElement.scrollTop = i-1;                
+            }, 30);
+        }
+    }  
 
     render() {
 
@@ -38,6 +54,8 @@ class ImgGrid extends Component {
 
         return (
             <div>
+                {this.state.upVisible === false ? null : <span className="left control user-select-none fixed mob" onClick={()=>this.handeClickUp()}>Up</span>}
+
                 {
                     this.props.imgOnload === false ? <LoadingScreen /> : null
                 }
@@ -52,6 +70,8 @@ class ImgGrid extends Component {
                         title={this.state.title}
                     />
                     :
+                    
+
                     <Masonry
                         
                         className='ImgGrid'
@@ -72,6 +92,7 @@ class ImgGrid extends Component {
                             )
                         }
                     </Masonry>
+                
                 }
             </div>
         );

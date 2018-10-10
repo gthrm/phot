@@ -1,3 +1,23 @@
 .ImgGrid {
     margin: 0 auto;
 }
+
+.fixed {
+    position: fixed;
+}
+
+@media (max-width: 480px) {
+    .mob {
+        z-index: 9999999 !important;
+        position: fixed !important;
+        top: initial !important;
+        left: initial !important;
+        right: 30px;
+        bottom: 30px !important;
+        width: 100px !important;
+        height: 40px !important;
+        color: rgba(255, 255, 255, 0.5) !important;
+        background-color: rgba(0, 0, 0, 0.15)!important;
+        font-size: 20px !important;
+    }
+}
