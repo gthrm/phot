@@ -21,7 +21,7 @@ class ImgGrid extends Component {
 
     componentDidMount() {
         window.addEventListener('scroll', () => this.upVisibleUpdate());
-        window.addEventListener('touchmove', () => this.upVisibleUpdate());
+        window.addEventListener('touchend', () => this.upVisibleUpdate());
     }
 
     upVisibleUpdate() {
