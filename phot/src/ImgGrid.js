@@ -19,10 +19,10 @@ class ImgGrid extends Component {
     }
 
     updateInfoImg = (data) => {
-        this.setState({number: data.number, url: data.url, title: data.title});
+        this.setState({ number: data.number, url: data.url, title: data.title });
     }
 
-    
+
 
     render() {
 
@@ -42,36 +42,42 @@ class ImgGrid extends Component {
                     this.props.imgOnload === false ? <LoadingScreen /> : null
                 }
                 {
-                    this.props.window?
-                    <Window
-                        imges={this.props.imges}
-                        window={this.props.window}
-                        updateStateWindow={this.props.updateStateWindow}
-                        number={this.state.number}
-                        url={this.state.url}
-                        title={this.state.title}
-                    />
-                    :
-                    <Masonry
-                        
-                        className='ImgGrid'
-                        options={masonryOptions}
-                    >
-                        {
-                            this.props.imges.map(img =>
-                                <Img
-                                    updateInfoImg={this.updateInfoImg}
-                                    updateStateWindow={this.props.updateStateWindow}
-                                    window={this.props.window}
-                                    key={img._id}
-                                    number={img.number}
-                                    url={img.url}
-                                    title={img.title}
-                                >
-                                </Img>
-                            )
-                        }
-                    </Masonry>
+                    this.props.window ?
+                        <Window
+                            imges={this.props.imges}
+                            window={this.props.window}
+                            updateStateWindow={this.props.updateStateWindow}
+                            number={this.state.number}
+                            url={this.state.url}
+                            title={this.state.title}
+                        />
+                        :
+                        <div
+                            style={{ height: window.innerHeight, overflowY: 'scroll' }}
+                            onScroll={(event) => this.props.onScroll(event)}
+                        >
+                            <Masonry
+                                className='ImgGrid'
+                                options={masonryOptions}
+
+                            >
+                                {
+                                    this.props.imges.map(img =>
+                                        <Img
+                                            updateInfoImg={this.updateInfoImg}
+                                            updateStateWindow={this.props.updateStateWindow}
+                                            window={this.props.window}
+                                            key={img._id}
+                                            number={img.number}
+                                            url={img.url}
+                                            title={img.title}
+                                        >
+                                        </Img>
+                                    )
+                                }
+                            </Masonry>
+
+                        </div>
                 }
             </div>
         );
