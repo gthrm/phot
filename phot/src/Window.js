@@ -10,6 +10,7 @@ class Window extends Component {
             url: this.props.url,
             title: this.props.title
         };
+        this.number = 0
       }
 
     handeClick() {
@@ -18,10 +19,11 @@ class Window extends Component {
 
     handeClickNext() {
         const lengthArr = this.props.imges.length;
-        const number = this.state.number;
-        const nextNumber = lengthArr-number;
-
+        
+        const nextNumber = this.number;
+        this.number = this.number+1;
         nextNumber === lengthArr ?
+        this.number = 0 &&
         this.setState({
             number: this.props.imges[0].number,
             url: this.props.imges[0].url,
