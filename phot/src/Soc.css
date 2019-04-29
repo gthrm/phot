@@ -16,3 +16,11 @@
 .fab::before {
     width: 150px;
 }
+
+@media (max-width: 480px) {
+    .li-soc {
+        margin: 0;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

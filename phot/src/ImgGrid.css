@@ -1,3 +1,13 @@
 .ImgGrid {
     margin: 0 auto;
 }
+
+.name-grid {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .name-grid {
+        display: inherit;
+    }
+}

@@ -3,7 +3,9 @@ import Masonry from 'react-masonry-component';
 
 import Window from './Window.js';
 import Img from './Img.js';
-import LoadingScreen from './LoadingScreen.js'
+import LoadingScreen from './LoadingScreen.js';
+import Soc from './Soc.js';
+import svg from './svg.js';
 
 import './ImgGrid.css';
 
@@ -53,9 +55,16 @@ class ImgGrid extends Component {
                         />
                         :
                         <div
-                            style={{ height: window.innerHeight, overflowY: 'scroll' }}
+                            style={{ height: window.innerHeight, overflowY: 'scroll', paddingTop: 15, paddingBottom: 15 }}
                             onScroll={(event) => this.props.onScroll(event)}
                         >
+                            <div className="name-grid" style={{paddingBottom: 15}}>
+                                <h1 className="center">Redevice</h1>
+                                <ul className="ul-soc">
+                                    <Soc href="https://vk.com/romanra" title="vk.com" svg={svg.vk} />
+                                    <Soc href="https://www.instagram.com/redevice/" title="instagram" svg={svg.inst} />
+                                </ul>
+                            </div>
                             <Masonry
                                 className='ImgGrid'
                                 options={masonryOptions}
