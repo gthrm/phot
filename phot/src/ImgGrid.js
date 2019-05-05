@@ -55,6 +55,7 @@ class ImgGrid extends Component {
                         />
                         :
                         <div
+                            className="touch"
                             style={{ height: window.innerHeight, overflowY: 'scroll', paddingTop: 15, paddingBottom: 15 }}
                             onScroll={(event) => this.props.onScroll(event)}
                         >
@@ -63,6 +64,8 @@ class ImgGrid extends Component {
                                 <ul className="ul-soc">
                                     <Soc href="https://vk.com/romanra" title="vk.com" svg={svg.vk} />
                                     <Soc href="https://www.instagram.com/redevice/" title="instagram" svg={svg.inst} />
+                                    <Soc href={null} title="donate" svg={svg.money} changeIsOpen={this.props.changeIsOpen} />
+
                                 </ul>
                             </div>
                             <Masonry

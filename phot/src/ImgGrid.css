@@ -6,6 +6,10 @@
     display: none;
 }
 
+.touch {
+    -webkit-overflow-scrolling: touch;
+}
+
 @media (max-width: 480px) {
     .name-grid {
         display: inherit;

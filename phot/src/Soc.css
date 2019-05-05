@@ -3,17 +3,17 @@
     margin: 10px;
 }
 
-.fab {
+.fab, .fas, .far {
     size: 30px;
     color: #000000;
 }
 
-.fab:hover {
+.fab:hover, .fas:hover , .far:hover {
     cursor: pointer;
     filter: opacity(.5);
 }
 
-.fab::before {
+.fab::before, .fas::before, .far::before {
     width: 150px;
 }
 
