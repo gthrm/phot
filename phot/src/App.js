@@ -17,7 +17,8 @@ class App extends Component {
       data: [],
       window: false,
       imgOnload: false,
-      count: 1
+      count: 1,
+      isLoad: true
     };
     this.pages = 0
   }
@@ -56,7 +57,7 @@ class App extends Component {
           </div>
           {this.state.isDonateOpen ?
             <div className="grid">
-              <div style={{flex: 1, display: "flex", justifyContent: "flex-end", padding: 10}}>
+              <div style={{ flex: 1, display: "flex", justifyContent: "flex-end", padding: 10 }}>
                 <Soc href={null} title="closed" svg={svg.closed} changeIsOpen={this.changeIsOpen.bind(this)} />
               </div>
               <iframe title="Yandex.Money donate" src="https://money.yandex.ru/quickpay/shop-widget?writer=seller&targets=%D0%9D%D0%B0%20%D1%81%D0%BE%D0%B2%D0%B5%D1%80%D1%88%D0%B5%D0%BD%D1%81%D1%82%D0%B2%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%D0%B2%D1%8B%D0%BA%D0%BE%D0%B2&targets-hint=&default-sum=100&button-text=11&payment-type-choice=on&mobile-payment-type-choice=on&hint=&successURL=https%3A%2F%2Fwww.myjpg.ru%2F&quickpay=shop&account=410013477761450" width="100%" height="222" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
@@ -71,7 +72,7 @@ class App extends Component {
   }
 
   changeIsOpen = () => {
-    this.setState({isDonateOpen: !this.state.isDonateOpen})
+    this.setState({ isDonateOpen: !this.state.isDonateOpen })
   }
 
   onScrollList = (event) => {
@@ -79,12 +80,19 @@ class App extends Component {
     // console.log(event.target.scrollTop +
     //     event.target.offsetHeight, event.target.scrollHeight, event.target.scrollTop + event.target.offsetHeight === event.target.scrollHeight/2)
     // console.log('====================================')
-    console.log(event.target.scrollTop, event.target.offsetHeight, event.target.scrollHeight);
-    
+    // console.log(event.target.scrollTop + event.target.offsetHeight, event.target.scrollHeight - 300);
+    // console.log((event.target.scrollTop + event.target.offsetHeight) > (event.target.scrollHeight - 300));
+
+
     // const scrollBottom = ;
 
-    if (event.target.scrollTop + event.target.offsetHeight === event.target.scrollHeight) {
-      this.loadContent(); //API method
+    if ((event.target.scrollTop + event.target.offsetHeight) > (event.target.scrollHeight - event.target.offsetHeight/2)) {
+      if (this.state.isLoad) {
+        this.loadContent();
+      }   //API method
+      this.setState({ isLoad: false })
+    } if ((event.target.scrollTop + event.target.offsetHeight) < (event.target.scrollHeight - event.target.offsetHeight/2)) {
+      this.setState({ isLoad: true })
     }
   }
 
