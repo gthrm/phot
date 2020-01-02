@@ -1,0 +1,13 @@
+.img {
+    width: 300px;
+    margin-bottom: 1px;
+}
+.imagecontainer {
+    background-color: rgba(175,175,175,.1);
+}
+
+.img:hover {
+    cursor: pointer;
+    filter: brightness(115%);
+      
+}
