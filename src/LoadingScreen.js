@@ -1,15 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './LoadingScreen.css';
 
-class LoadingScreen  extends Component {
+const LoadingScreen = () => (
+  <div className="for-loader">
+    <div className="loader" />
+  </div>
+);
 
-    render() {
-        return (
-            <div className="for-loader">
-                <div className="loader"></div>
-            </div>
-        )
-    }
-}
-
-export default LoadingScreen ;
+export default LoadingScreen;
