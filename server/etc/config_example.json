@@ -1,0 +1,13 @@
+{
+    "serverPort": "3443",
+    "user": {
+        "user": "password"
+    },
+    "db": {
+        "username": "username_db",
+        "pass": "pass_db",
+        "host": "host_db",
+        "port": "port_db",
+        "name": "name_db"
+    }
+}
