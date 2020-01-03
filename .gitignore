@@ -10,3 +10,4 @@ web-build/
 web-report/
 build/
 package-lock.json
+yarn.lock
