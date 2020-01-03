@@ -8,6 +8,6 @@ npm-debug.*
 *.orig.*
 web-build/
 web-report/
-build/
+build/*
 package-lock.json
 yarn.lock
