@@ -7,7 +7,7 @@ import './ImgGrid.css';
 
 const masonryOptions = {
   itemSelector: '.img',
-  columnWidth: 100,
+  columnWidth: 120,
   gutter: 1,
   isFitWidth: true,
   percentPosition: true,
@@ -48,7 +48,7 @@ function HomeComponent(props) {
         </ul>
       </div>
       <Masonry
-        className="ImgGrid"
+        className="masonry"
         options={masonryOptions}
       >
         {

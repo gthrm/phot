@@ -57,7 +57,6 @@ class ImgGrid extends Component {
         onScroll={onScroll}
         changeIsOpen={changeIsOpen}
       />
-
     );
   }
 }

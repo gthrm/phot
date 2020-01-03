@@ -1,5 +1,5 @@
 .img {
-    width: 300px;
+    width: 360px;
     margin-bottom: 1px;
 }
 .imagecontainer {
@@ -10,4 +10,10 @@
     cursor: pointer;
     filter: brightness(115%);
       
+}
+
+@media (max-width: 480px) {
+    .img {
+        width: 100%;
+    }
 }

@@ -122,7 +122,10 @@ class App extends Component {
             ? (
               <div className="grid">
                 <div style={{
-                  flex: 1, display: 'flex', justifyContent: 'flex-end', padding: 10
+                  flex: 1,
+                  display: 'flex',
+                  justifyContent: 'flex-end',
+                  padding: 10
                 }}
                 >
                   <Soc
@@ -144,7 +147,10 @@ class App extends Component {
               </div>
             )
             : (
-              <div className="grid" onLoad={() => this.counterImg()}>
+              <div
+                className="grid"
+                onLoad={this.counterImg}
+              >
                 <ImgGrid
                   setOnload={this.setOnload}
                   innerHeight={innerHeight}
