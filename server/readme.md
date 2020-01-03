@@ -54,24 +54,3 @@ const options = {
 //   console.log(`Express server listening on port ${serverPort}`);
 // });
 ```
-
-# Get Started Client
-1. run to console in the application dir
-```alias
-yarn
-```
-to instal dependencies
-
-2. run to console in the application dir
-```alias
-yarn build
-```
-to building application files
-
-**OR**
-
-run to console in the application dir
-```alias
-yarn start
-```
-to start application
