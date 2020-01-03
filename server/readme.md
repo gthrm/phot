@@ -1,4 +1,5 @@
 # Get Started Server
+
 0. Create **config.json** to the ./server/etc dir
 
 1. run to console
