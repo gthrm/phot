@@ -9,5 +9,7 @@ npm-debug.*
 web-build/
 web-report/
 build/*
+!build/README.md
+!README.md
 package-lock.json
 yarn.lock
